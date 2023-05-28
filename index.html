@@ -6,18 +6,22 @@
 </head>
 <body>
   <header>
-    <h1>Car Chase 3D</h1>
+    <h1 class="logo">Car Chase 3D</h1>
     <h2 class="studio">Matei Studio</h2>
   </header>
   
   <main>
-    <p>Car Chase 3D is an exciting game where you have to drive a car to escape the police. In this 3D game, you need to avoid the police cars and collect gas cans that randomly spawn on the road. Be careful! If you run out of fuel or get caught by the police, it's game over.</p>
-    
-    <h3>Price: 10 Moldavian Lei</h3>
-    
-    <button onclick="purchaseGame()">Buy Now</button>
-    
-    <div id="paymentStatus"></div>
+    <div class="game-card">
+      <h3>Car Chase 3D</h3>
+      <p class="description">An exciting game where you have to drive a car to escape the police. Avoid the police cars and collect gas cans on the road.</p>
+      
+      <div class="price-container">
+        <span class="price">10 Moldavian Lei</span>
+        <button onclick="purchaseGame()">Buy Now</button>
+      </div>
+      
+      <div id="paymentStatus" class="payment-status"></div>
+    </div>
   </main>
   
   <footer>
@@ -26,9 +30,12 @@
   
   <script>
     function purchaseGame() {
-      // Code to handle the purchase process
-      // You can use JavaScript to validate payment and display the payment status
-      document.getElementById("paymentStatus").innerText = "Payment successful! Click the link below to download the game.";
+      // Simulating payment completion
+      setTimeout(function() {
+        document.getElementById("paymentStatus").innerText = "Payment successful!";
+        document.querySelector(".download-btn").setAttribute("href", "car-chase.exe");
+        document.querySelector(".download-btn").classList.add("show");
+      }, 2000);
     }
   </script>
 </body>
